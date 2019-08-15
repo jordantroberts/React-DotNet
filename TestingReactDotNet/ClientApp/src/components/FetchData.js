@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// This component calls the ASP.NET Core Web API in the constructor to get the weather forecast and set the state to display the list. 
+
 export class FetchData extends Component {
   static displayName = FetchData.name;
 
@@ -39,6 +41,8 @@ export class FetchData extends Component {
     );
   }
 
+  // Every React component implements a render() method that takes input data and returns what to display.
+  // The FetchData component's render method passes the state to another static method which renders the weather forecast list:
   render () {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
