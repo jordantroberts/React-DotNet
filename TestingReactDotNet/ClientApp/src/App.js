@@ -18,6 +18,7 @@ export default class App extends Component {
         <Route path='/fetch-data' component={FetchData} />
         <Route path='/todo' component={ToDo} /> 
         <Route path='/helloworld' component={HelloWorld} /> 
+        <Route path='/date' component={Date} />
       </Layout>
     );
   }
