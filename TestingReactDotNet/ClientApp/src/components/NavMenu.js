@@ -44,11 +44,13 @@ export class NavMenu extends Component {
                  </NavItem>
                  <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/helloworld">Hello World</NavLink>
-                            </NavItem>
+                     </NavItem>
 
-                          <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/date">Date</NavLink>
-                </NavItem>
+                     <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/daytoday">Today</NavLink>
+                 </NavItem>
+
+
               </ul>
             </Collapse>
           </Container>

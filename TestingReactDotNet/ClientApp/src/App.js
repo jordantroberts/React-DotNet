@@ -6,6 +6,7 @@ import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { ToDo } from './components/ToDo';
 import { HelloWorld } from './components/HelloWorld';
+import { DayToday } from './components/DayToday';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -18,7 +19,8 @@ export default class App extends Component {
         <Route path='/fetch-data' component={FetchData} />
         <Route path='/todo' component={ToDo} /> 
         <Route path='/helloworld' component={HelloWorld} /> 
-        <Route path='/date' component={Date} />
+        <Route path='/daytoday' component={DayToday}/>
+     
       </Layout>
     );
   }

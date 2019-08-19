@@ -10,10 +10,12 @@ namespace TestingReactDotNet.Controllers
 {
     public class DateController : Controller
     {
-        [HttpGet, Route("GetDate")]
+        [HttpGet]
         public async Task<string> GetDate()
         {
-            string info = $"Today is {DateTime.Today:D}";
+            //DateTime dt = DateTime.Now;
+            //string format = "MMM ddd d HH:mm yyyy"; 
+            string info = $"Today is {DateTime.Now.ToString("dddd, dd MMMM yyyy")}";
             return info; 
         }
     }
