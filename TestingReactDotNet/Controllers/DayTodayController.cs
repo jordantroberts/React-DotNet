@@ -13,7 +13,7 @@ namespace TestingReactDotNet.Controllers
         [HttpGet, Route("GetDate")]
         public async Task<string> GetDate()
         {
-            var info = $"Today is {DateTime.Now.ToString("dddd, dd MMMM yyyy")}";
+            var info = $"Today is {DateTime.Now.ToString("dddd, dd MMMM yyyy")} and the time is {DateTime.Now.ToString("hh:mm tt")}";
             return info;
         }
     }
