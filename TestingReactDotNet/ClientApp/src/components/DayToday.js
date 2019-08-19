@@ -1,5 +1,4 @@
-﻿
-import React, { Component } from "react";
+﻿import React, { Component } from "react";
 
 export class DayToday extends Component {
   constructor(props) {
@@ -8,12 +7,12 @@ export class DayToday extends Component {
 
     fetch("api/DayToday/GetDate")
       .then(response => response.text())
-    .then(data => {
-       this.setState({ message: data });
-        });
+      .then(data => {
+        this.setState({ message: data });
+      });
   }
 
   render() {
-    return <h1>{this.state.message}  </h1>;
+    return <h1>{this.state.message} </h1>;
   }
 }
