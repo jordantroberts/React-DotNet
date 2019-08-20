@@ -11,7 +11,7 @@ namespace TestingReactDotNet.Controllers
     public class HelloWorldController : Controller
     {
         [HttpGet, Route("Message")]
-        public async Task<string> Message()
+        public string Message()
         {
             var response = "Hello World";
             return response;
