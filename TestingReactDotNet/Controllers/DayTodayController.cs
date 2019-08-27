@@ -34,7 +34,8 @@ namespace TestingReactDotNet.Controllers {
         [HttpGet, Route ("GetDate")]
         public  string GetDate () {
 
-            var info = $"Today is {_dateTimeProvider.Now().ToString("dddd, dd MMMM yyyy")} and the time is {_dateTimeProvider.Now().ToString("hh:mm tt")}";
+            var dateTime = _dateTimeProvider.Now();
+            var info = $"Today is {dateTime.ToString("dddd, dd MMMM yyyy")} and the time is {dateTime.ToString("hh:mm tt")}";
             return info;
 
         }
