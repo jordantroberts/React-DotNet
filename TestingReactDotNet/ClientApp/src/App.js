@@ -7,6 +7,7 @@ import { Counter } from './components/Counter';
 import { ToDo } from './components/ToDo';
 import { HelloWorld } from './components/HelloWorld';
 import { DayToday } from './components/DayToday';
+import { DisplayName } from './components/DisplayName'; 
 
 export default class App extends Component {
   static displayName = App.name;
@@ -20,7 +21,7 @@ export default class App extends Component {
         <Route path='/todo' component={ToDo} /> 
         <Route path='/helloworld' component={HelloWorld} /> 
         <Route path='/daytoday' component={DayToday}/>
-     
+        <Route path='/displayname' component={DisplayName}/>
       </Layout>
     );
   }

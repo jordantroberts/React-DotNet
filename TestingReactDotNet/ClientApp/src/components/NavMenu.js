@@ -77,6 +77,11 @@ export class NavMenu extends Component {
                   <NavLink tag={Link} className="text-dark" to="/daytoday">
                     Today
                   </NavLink>
+                            </NavItem>
+                              <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/displayname">
+                    Display Name
+                  </NavLink>
                 </NavItem>
               </ul>
             </Collapse>
