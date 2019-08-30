@@ -1,33 +1,48 @@
-﻿
-import React, { Component } from "react";
+﻿import React, { Component } from "react";
 
 export class DisplayName extends Component {
-    constructor(props) {
-    super(props);
-    this.state = {greeting: ''};
+  state = {
+    name: "",
+    greeting: ""
+  };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  updateInput(key, value) {
+    this.setState({
+      [key]: value
+    });
   }
 
-  handleChange(event) {
-    this.setState({greeting: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.greeting);
-    event.preventDefault();
+  calculate() {
+    fetch("api/DisplayName/Greeting")
+      .then(response => response.text())
+      .then(data => {
+        this.setState({ greeting: data });
+      });
   }
 
   render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.greeting} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    );
+    if ("" !== this.state.greeting) {
+      // We already submitted the form, show welcome message
+      return <h1>{this.state.greeting}</h1>;
+    } else {
+      return (
+        <center>
+          <div className="App">
+            <div>
+              Type a word...
+              <br />
+              <input
+                type="text"
+                placeholder="Type word here ..."
+                value={this.state.name}
+                onChange={e => this.updateInput("name", e.target.value)}
+              />
+              <button onClick={() => this.calculate()}>Submit</button>
+              <br />
+            </div>
+          </div>
+        </center>
+      );
+    }
   }
 }
