@@ -14,7 +14,7 @@ namespace TestingReactDotNet.Controllers
         [HttpGet, Route("Greeting")]
         public string Greeting(string name)
         {
-            var greeting = "Hello" + name;
+            var greeting = "Hello, " + name;
             return greeting;
         }
     }

@@ -13,7 +13,7 @@ export class DisplayName extends Component {
   }
 
   calculate() {
-    fetch("api/DisplayName/Greeting")
+    fetch("api/DisplayName/Greeting?name=" + encodeURIComponent(this.state.name))
       .then(response => response.text())
       .then(data => {
         this.setState({ greeting: data });
