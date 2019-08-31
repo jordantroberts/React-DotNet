@@ -12,9 +12,9 @@ namespace TestingReactDotNet.Controllers
     public class DisplayNameController : Controller
     {
         [HttpGet, Route("Greeting")]
-        public string Greeting(string name)
+        public string Greeting(string you)
         {
-            var greeting = "Hello, " + name;
+            var greeting = "Hello, " + you;
             return greeting;
         }
     }

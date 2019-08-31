@@ -14,7 +14,7 @@ export class DisplayName extends Component {
 
     calculate() {
         // send parameters to ASP.NET backend with the fetch API: 
-    fetch("api/DisplayName/Greeting?name=" + encodeURIComponent(this.state.name))
+    fetch("api/DisplayName/Greeting?you=" + encodeURIComponent(this.state.name))
         // Use a query string - encodeURIComponent encodes a string to be inside the query string. 
         // There are some built in model binders in ASP.NET. Importantly, the query string model binder takes the query string parameters and pass them as arguments with the same name to the controller.
       .then(response => response.text())
@@ -33,11 +33,11 @@ export class DisplayName extends Component {
         <center>
           <div className="App">
             <div>
-              Type a word...
+              What's your name?
               <br />
               <input
                 type="text"
-                placeholder="Type word here ..."
+                placeholder="Type name here ..."
                 value={this.state.name}
                 onChange={e => this.updateInput("name", e.target.value)}
               />
