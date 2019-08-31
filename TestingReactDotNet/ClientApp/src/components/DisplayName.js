@@ -12,15 +12,19 @@ export class DisplayName extends Component {
     });
   }
 
-  calculate() {
+    calculate() {
+        // send parameters to ASP.NET backend with the fetch API: 
     fetch("api/DisplayName/Greeting?name=" + encodeURIComponent(this.state.name))
+        // Use a query string - encodeURIComponent encodes a string to be inside the query string. 
+        // There are some built in model binders in ASP.NET. Importantly, the query string model binder takes the query string parameters and pass them as arguments with the same name to the controller.
       .then(response => response.text())
       .then(data => {
         this.setState({ greeting: data });
       });
   }
 
-  render() {
+    render() {
+      // render the form if it's not submitted yet, else render the answer: 
     if ("" !== this.state.greeting) {
       // We already submitted the form, show welcome message
       return <h1>{this.state.greeting}</h1>;
