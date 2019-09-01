@@ -24,13 +24,11 @@
     <None Remove="ClientApp\src\components\Date.js" />
     <None Remove="ClientApp\src\components\WhatDayIsIt.js" />
     <None Remove="ClientApp\src\components\WhatDayIsIt.js" />
-    <None Remove="ClientApp\src\components\MiddleLetter.js" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Controllers\HomeController.cs" />
     <Compile Remove="Controllers\DateController.cs" />
-    <Compile Remove="Controllers\MiddleLetterController.cs" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

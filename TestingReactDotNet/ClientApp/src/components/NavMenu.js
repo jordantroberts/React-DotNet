@@ -82,7 +82,11 @@ export class NavMenu extends Component {
                   <NavLink tag={Link} className="text-dark" to="/displayname">
                     Display Name
                   </NavLink>
-                </NavItem>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} className="text-dark" to="/middleletter">
+                                Middle Letter
+                                </NavLink></NavItem>
               </ul>
             </Collapse>
           </Container>
