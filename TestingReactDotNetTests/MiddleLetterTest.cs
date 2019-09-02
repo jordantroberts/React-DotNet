@@ -5,17 +5,21 @@ using TestingReactDotNet.Controllers;
 
 namespace TestingReactDotNetTests
 {
+    [TestFixture]
     public class MiddleLetterTest
     {
-        [Test]
-        public void ReturnsMiddleLetterOfEvenWord()
+        [TestCase("test", "es")]
+        [TestCase("tests", "s")]
+
+        public void ReturnsMiddleLetterOfWord(string input, string expected)
         {
             var controller = new MiddleLetterController();
-            string result = controller.GetMiddle("test");
-            string expected = "es";
-            Assert.AreEqual(expected, result); 
+            string actual = controller.GetMiddle(input);
+            Assert.AreEqual(expected, actual); 
         }
     }
 }
 
 
+
+     

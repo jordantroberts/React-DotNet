@@ -5,18 +5,23 @@ using TestingReactDotNet.Controllers;
 
 namespace TestingReactDotNetTests
 {
+    [TestFixture]
     public class DisplayNameTest
     {
-        [Test]
-        public void ReturnsHelloName()
+        [TestCase("Jordan", "Hello, Jordan")]
+        [TestCase("Ben", "Hello, Ben")]
+        [TestCase("Rhiannon", "Hello, Rhiannon")]
+
+        public void ReturnsHelloName(string input, string expected)
         {
             var controller = new DisplayNameController();
            
-            string result = controller.Greeting("Jordan");
-            string expected = "Hello, Jordan";
-            Assert.AreEqual(expected, result); 
+            string actual = controller.Greeting(input);
+            Assert.AreEqual(expected, actual); 
 
         }
     }
 }
+
+
 
